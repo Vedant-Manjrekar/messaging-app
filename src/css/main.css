@@ -1,0 +1,503 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f0e4cf;
+  height: 100vh;
+}
+
+.app--body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  background-color: white;
+  height: 100vh;
+  margin: 1rem 0;
+  width: 100vw;
+  -webkit-box-shadow: 0px 1px 25px 1px rgba(0, 0, 0, 0.64);
+          box-shadow: 0px 1px 25px 1px rgba(0, 0, 0, 0.64);
+  overflow: hidden;
+}
+
+.sidebar {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 0fr 0fr 2fr;
+      grid-template-rows: 0fr 0fr 2fr;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: gainsboro;
+}
+
+.sidebar .sidebar--header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 1rem 0;
+  background-color: lightgray;
+}
+
+.sidebar .sidebar--search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: gainsboro;
+  height: 3rem;
+  padding: 5px;
+}
+
+.sidebar .sidebar--search input {
+  border: none;
+  text-align: center;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: stretch;
+  font-size: 1rem;
+}
+
+.sidebar .sidebar--search .sidebar--searchContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  border-radius: 20px;
+  height: 2.5rem;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: stretch;
+  padding: 0 5px;
+}
+
+.sidebar .sidebar--search .sidebar--searchContainer .MuiSvgIcon-root {
+  color: gray;
+  height: 1.5rem;
+}
+
+.sidebar .sidebar--chats {
+  background-color: white;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-family: sans-serif;
+  height: auto;
+  overflow: scroll;
+}
+
+.sidebar--chat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 4rem;
+}
+
+.sidebar--chat .MuiAvatar-root {
+  margin-left: 1rem;
+}
+
+.sidebar--chat .sidebar--chat--info {
+  margin-left: 1rem;
+  width: -webkit-fill-available;
+}
+
+.sidebar--chat .sidebar--chat--info .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-right: 1rem;
+}
+
+.sidebar--chat .sidebar--chat--info .head button {
+  background-color: white;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 12px;
+}
+
+.sidebar--chat .sidebar--chat--info .head button:hover {
+  background-color: red;
+  cursor: pointer;
+}
+
+.sidebar--chat .sidebar--chat--info .head button:hover .MuiSvgIcon-root {
+  color: white;
+}
+
+.sidebar--chat .sidebar--chat--info .head button .MuiSvgIcon-root {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.sidebar--chat .sidebar--chat--info h2 {
+  font-size: 18px;
+}
+
+.sidebar--chat .sidebar--chat--info p {
+  font-size: 15px;
+}
+
+.sidebar--chat:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.chat {
+  background: url("https://i.pinimg.com/originals/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg") repeat;
+  background-size: contain;
+  overflow: scroll;
+  display: -ms-grid;
+  display: grid;
+}
+
+.chat .chats {
+  margin: 5rem 0;
+  display: block;
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.chat .chat--header {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: lightgray;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+  padding: 1rem;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  z-index: 2;
+  position: fixed;
+  width: -webkit-fill-available;
+}
+
+.chat .chat--header .chat--info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: sans-serif;
+}
+
+.chat .chat--header .chat--info p {
+  font-weight: 100;
+  font-size: small;
+  color: gray;
+}
+
+.chat .chat--header .chat--features {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.chat .chat--header .chat--name {
+  margin-left: 1rem;
+}
+
+.chat .chat--msg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: sans-serif;
+  -webkit-box-shadow: 1px 3px 12px 1px rgba(0, 0, 0, 0.28);
+          box-shadow: 1px 3px 12px 1px rgba(0, 0, 0, 0.28);
+  padding: .5rem;
+  border-radius: 12px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 2rem;
+  position: relative;
+  margin-bottom: 2rem;
+  background-color: white;
+}
+
+.chat .chat--msg p {
+  padding: 5px;
+}
+
+.chat .chat--msg .chat--name {
+  position: absolute;
+  -webkit-transform: translateY(-1.8rem);
+          transform: translateY(-1.8rem);
+  left: 5px;
+  font-weight: bold;
+  font-size: small;
+}
+
+.chat .chat--msg .chat--time {
+  margin-left: .5rem;
+  font-weight: bold;
+  -webkit-transform: translateY(0.5rem);
+          transform: translateY(0.5rem);
+  color: gray;
+  font-size: x-small;
+  text-align: right;
+  padding: 5px;
+}
+
+.chat .chat--sent {
+  background-color: #dcf8c6;
+  margin-left: auto;
+}
+
+.chat .chat--recieved {
+  background-color: #fff;
+  margin-right: auto;
+}
+
+.chat .visible {
+  display: block;
+}
+
+.chat .invisible {
+  display: none;
+}
+
+.chat .chat--footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: -webkit-fill-available;
+  padding: 1rem;
+  background-color: #f2f1f1;
+}
+
+.chat .chat--footer .emoji-picker-react {
+  -webkit-transform: translate(-12.5rem, -12rem);
+          transform: translate(-12.5rem, -12rem);
+  position: absolute;
+}
+
+.chat .chat--footer .MuiSvgIcon-root {
+  color: gray;
+  cursor: pointer;
+}
+
+.chat .chat--footer form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: -webkit-fill-available;
+  margin-left: .8rem;
+}
+
+.chat .chat--footer form input {
+  width: -webkit-fill-available;
+  height: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid gray;
+  text-indent: 9px;
+  cursor: text;
+}
+
+.chat .chat--footer form #submit--btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+}
+
+#link {
+  text-decoration: none;
+  color: black;
+}
+
+#submit {
+  display: none;
+}
+
+#mic {
+  margin: 0 .7rem;
+}
+
+.preview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 20vw;
+  padding: 2rem;
+  position: fixed;
+  top: 25rem;
+  -webkit-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.75);
+  background-color: gray;
+}
+
+.chat--img {
+  width: 20rem;
+}
+
+.newChat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.newChat .MuiButtonBase-root {
+  font-size: 1rem;
+  color: black;
+  border-radius: 5px;
+  margin: 0;
+  padding: 0;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: stretch;
+  height: -webkit-fill-available;
+  height: -moz-available;
+  height: stretch;
+}
+
+.login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 90vh;
+  width: 45vw;
+  background-color: white;
+  border-radius: 12px;
+  -webkit-box-shadow: 0px 1px 25px 1px rgba(0, 0, 0, 0.64);
+          box-shadow: 0px 1px 25px 1px rgba(0, 0, 0, 0.64);
+}
+
+.login .google--logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 5vw;
+}
+
+.login .login--head {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.login img {
+  width: 15vw;
+}
+/*# sourceMappingURL=main.css.map */

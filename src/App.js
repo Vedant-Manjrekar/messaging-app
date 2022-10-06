@@ -1,23 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment, useEffect, useState } from "react";
+import "./css/main.css";
+import Sidebar from "./Components/Sidebar";
+import { onAuthStateChanged, signInWithPopup } from "firebase/auth";
+import { auth } from "./firebase";
+import Chat from "./Components/Chat";
+import { Route, Routes, Link } from "react-router-dom";
+import Login from "./Components/Login";
+import { useDispatch, useSelector } from "react-redux";
+import { login, logout } from "./features/userSlice";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const dispatch = useDispatch();
+  const userState = useSelector((state) => state.user.data);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((userAuth) => {
+      if (userAuth) {
+        dispatch(
+          login({
+            name: userAuth.displayName,
+            pic: userAuth.photoURL,
+          })
+        );
+      } else {
+        dispatch(logout());
+      }
+    });
+  }, [dispatch]);
+
+  return !userState.name ? (
+    <Login />
+  ) : (
+    <div className="app--body">
+      <Sidebar />
+
+      <Routes>
+        <Route path="/home" element={<Chat noFooter />} />
+        <Route path="/rooms/:roomId" element={<Chat />} />
+      </Routes>
     </div>
   );
 }
