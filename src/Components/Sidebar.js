@@ -1,22 +1,13 @@
 import React, { useState, useEffect } from "react";
-import {
-  doc,
-  getDoc,
-  onSnapshot,
-  getDocs,
-  query,
-  collection,
-  where,
-} from "firebase/firestore";
+import { onSnapshot, query, collection } from "firebase/firestore";
 import { signOut } from "firebase/auth";
 import { Avatar, IconButton } from "@mui/material";
 import DoughnutLarge from "@mui/icons-material/DonutLargeSharp";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import ChatIcon from "@mui/icons-material/Chat";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import SidebarChat from "./SidebarChat";
 import db from "../firebase";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { auth } from "../firebase";
 

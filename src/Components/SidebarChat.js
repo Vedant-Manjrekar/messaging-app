@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Avatar, IconButton } from "@mui/material";
-import * as color from "@mui/material/colors";
 import db from "../firebase";
 import RemoveIcon from "@mui/icons-material/Remove";
 import {
