@@ -17,18 +17,11 @@ import {
   orderBy,
   addDoc,
   serverTimestamp,
-  FieldValue,
 } from "firebase/firestore";
-import Files from "react-files";
 import db, { auth } from "../firebase";
 import { useSelector } from "react-redux";
-import {
-  AlignHorizontalCenterSharp,
-  AlignVerticalBottom,
-} from "@mui/icons-material";
 import { useDispatch } from "react-redux";
 import { useFileUpload } from "use-file-upload";
-import { style } from "@mui/system";
 
 function Chat(props) {
   const [input, setInput] = useState("");
