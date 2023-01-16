@@ -16,7 +16,7 @@ function Login() {
       <div className="whatsapp--logo">
         <img src={logo} alt="whatsapp_logo" />
       </div>
-      <p className="login--head">Sign In Using Google</p>
+      <p className="login--head">Continue using</p>
 
       <Button onClick={loginUsingGoogle}>
         <img

@@ -13,7 +13,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #f0e4cf;
   height: 100vh;
 }
 
@@ -24,10 +23,11 @@ body {
       grid-template-columns: 1fr 2fr;
   background-color: white;
   height: 100vh;
-  margin: 1rem 0;
+  background: url("https://i.pinimg.com/originals/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg");
   width: 100vw;
   -webkit-box-shadow: 0px 1px 25px 1px rgba(0, 0, 0, 0.64);
           box-shadow: 0px 1px 25px 1px rgba(0, 0, 0, 0.64);
+  background-size: contain;
   overflow: hidden;
 }
 
@@ -277,7 +277,7 @@ body {
   font-family: sans-serif;
   -webkit-box-shadow: 1px 3px 12px 1px rgba(0, 0, 0, 0.28);
           box-shadow: 1px 3px 12px 1px rgba(0, 0, 0, 0.28);
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 12px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -302,7 +302,7 @@ body {
 }
 
 .chat .chat--msg .chat--time {
-  margin-left: .5rem;
+  margin-left: 0.5rem;
   font-weight: bold;
   -webkit-transform: translateY(0.5rem);
           transform: translateY(0.5rem);
@@ -369,7 +369,7 @@ body {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   width: -webkit-fill-available;
-  margin-left: .8rem;
+  margin-left: 0.8rem;
 }
 
 .chat .chat--footer form input {
@@ -404,7 +404,7 @@ body {
 }
 
 #mic {
-  margin: 0 .7rem;
+  margin: 0 0.7rem;
 }
 
 .preview {
@@ -472,8 +472,7 @@ body {
   width: 45vw;
   background-color: white;
   border-radius: 12px;
-  -webkit-box-shadow: 0px 1px 25px 1px rgba(0, 0, 0, 0.64);
-          box-shadow: 0px 1px 25px 1px rgba(0, 0, 0, 0.64);
+  border: 1px solid black;
 }
 
 .login .google--logo {
@@ -491,8 +490,8 @@ body {
 
 .login .login--head {
   font-size: 2rem;
-  font-weight: bold;
   font-family: sans-serif;
+  font-weight: 100;
   text-align: center;
   margin: 3rem 0;
 }
